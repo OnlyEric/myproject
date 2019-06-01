@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <cnHeader></cnHeader>
+    <Header></Header>
     <router-view name="main"></router-view>
-    <router-view name="sidebar"></router-view>
+    <!--<router-view name="sidebar"></router-view>-->
   </div>
 </template>
 <script>
-import cnHeader from './components/Header'
+import Header from './components/Header'
+import About from './components/About'
 export default {
   name: 'App',
   components:{
-    cnHeader,
+    Header,
+    About,
   }
 }
 </script>
@@ -22,7 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 html{
-  background:#DDDDDD;
+  background:white;
 }
 body,div,span,a,p,ul,li {
 	margin: 0;

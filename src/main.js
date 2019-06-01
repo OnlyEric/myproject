@@ -3,14 +3,30 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import axios from 'axios'
+import vueScrollBehavior from 'vue-scroll-behavior'
+import VueLazyload from 'vue-lazyload'
+Vue.use(vueScrollBehavior, { router: router },VueLazyload)
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: '',
+    loading: '',
+    attempt: 1
+  })
+import 'normalize.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
+
+import $ from 'jquery' 
 Vue.prototype.$http=axios;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
